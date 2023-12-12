@@ -1,0 +1,22 @@
+annot_cell=/n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL
+output_cell=/n/groups/price/kushal/ENCODE/output/FINEMAP_ENR/Primary_Freeze2022_Ulirsch_BloodBio
+
+module load gcc/6.2.0
+module load R
+
+IFS="
+"
+
+TASKFILE=/data/deyk/kushal/ENCODE_E2G_GWAS_benchmark/Maya_benchmark
+                                                                                               
+for line in `cat $TASKFILE | awk '{print $1}' | sort | uniq`;
+do
+    annot_name=`echo $line | awk '{print $1}'`
+    echo $annot_name
+    if [ ! -f $output_cell/$annot_name.txt ]
+    then
+    cmd="Rscript overlap_finemap_bloodbio_ulirsch.R  $annot_cell $annot_name $output_cell"
+    sbatch --time=90:00 --mem=20000 --output=finemap.out --error=finemap.err -p short -c 1 --wrap="$cmd"
+    fi
+done
+
