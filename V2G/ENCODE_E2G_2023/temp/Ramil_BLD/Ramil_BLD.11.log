@@ -1,0 +1,60 @@
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.0
+* (C) 2014-2015 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call: 
+./ldsc.py \
+--print-snps /n/groups/price/kushal/LDSC/hapmap3_snps/hm.11.snp \
+--ld-wind-cm 1.0 \
+--out /n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL/Ramil_BLD/Ramil_BLD.11 \
+--bfile /n/groups/price/kushal/LDSC/1000G_EUR_Phase3_plink_hg38/1000G.EUR.QC.11 \
+--yes-really  \
+--annot /n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL/Ramil_BLD/Ramil_BLD.11.annot.gz \
+--l2  
+
+Beginning analysis at Wed Aug 17 09:34:41 2022
+Read list of 493753 SNPs from /n/groups/price/kushal/LDSC/1000G_EUR_Phase3_plink_hg38/1000G.EUR.QC.11.bim
+Read 1 annotations for 493753 SNPs from /n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL/Ramil_BLD/Ramil_BLD.11.annot.gz
+Read list of 489 individuals from /n/groups/price/kushal/LDSC/1000G_EUR_Phase3_plink_hg38/1000G.EUR.QC.11.fam
+Reading genotypes from /n/groups/price/kushal/LDSC/1000G_EUR_Phase3_plink_hg38/1000G.EUR.QC.11.bed
+Estimating LD Score.
+Reading list of 71092 SNPs for which to print LD Scores from /n/groups/price/kushal/LDSC/hapmap3_snps/hm.11.snp
+After merging with --print-snps, LD Scores for 61017 SNPs will be printed.
+Writing LD Scores for 61017 SNPs to /n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL/Ramil_BLD/Ramil_BLD.11.l2.ldscore.gz
+
+Summary of LD Scores in /n/groups/price/kushal/ENCODE/data/ANNOTATIONS_hg38/Primary_Freeze2022/ALL/ALL/Ramil_BLD/Ramil_BLD.11.l2.ldscore.gz
+         MAF        L2
+mean  0.2389   10.5172
+std   0.1429   14.1873
+min   0.0051   -0.5510
+25%   0.1145    1.6771
+50%   0.2301    5.8993
+75%   0.3609   13.8166
+max   0.5000  120.3360
+
+MAF/LD Score Correlation Matrix
+        MAF      L2
+MAF  1.0000  0.0664
+L2   0.0664  1.0000
+
+Annotation Correlation Matrix
+       ANNOT
+ANNOT    1.0
+
+Annotation Matrix Column Sums
+ANNOT    41394.0
+
+Summary of Annotation Matrix Row Sums
+count    493753.0000
+mean          0.0838
+std           0.2771
+min           0.0000
+25%           0.0000
+50%           0.0000
+75%           0.0000
+max           1.0000
+Analysis finished at Wed Aug 17 09:39:42 2022
+Total time elapsed: 5.0m:0.27s
